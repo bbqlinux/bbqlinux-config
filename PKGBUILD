@@ -2,7 +2,7 @@
 
 pkgname=bbqlinux-config
 pkgver=1.0.0
-pkgrel=6
+pkgrel=7
 pkgdesc="BBQLinux Configuration"
 arch=('any')
 url="https://github.com/bbqlinux/bbqlinux-config"

@@ -1,0 +1,6 @@
+[Suspend/hibernate permissions]
+Identity=unix-group:power
+Action=org.freedesktop.upower.hibernate;org.freedesktop.upower.suspend
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes

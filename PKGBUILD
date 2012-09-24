@@ -2,7 +2,7 @@
 
 pkgname=bbqlinux-config
 pkgver=1.0.2
-pkgrel=2
+pkgrel=3
 pkgdesc="BBQLinux Configuration"
 arch=('any')
 depends=('bbqlinux-artwork')

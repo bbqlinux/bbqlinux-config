@@ -2,7 +2,7 @@
 
 pkgname=bbqlinux-config
 pkgver=1.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc="BBQLinux Configuration"
 arch=('any')
 depends=('bbqlinux-artwork')
@@ -12,6 +12,9 @@ license=('GPL')
 package() {
     cd "$pkgdir"
     mkdir -p etc
-    cp -R "$srcdir/etc/polkit-1" etc/polkit-1
+
+    install -Dm700 "$srcdir/etc/polkit-1/localauthority/50-local.d/org.freedesktop.udisks2.pkla" etc/polkit-1/localauthority/50-local.d/org.freedesktop.udisks2.pkla
+    install -Dm700 "$srcdir/etc/polkit-1/localauthority/50-local.d/org.freedesktop.upower.pkla" etc/polkit-1/localauthority/50-local.d/org.freedesktop.upower.pkla
+
     cp -R "$srcdir/etc/skel" etc/skel
 }

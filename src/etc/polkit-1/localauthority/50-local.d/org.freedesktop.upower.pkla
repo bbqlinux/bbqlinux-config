@@ -1,6 +1,7 @@
-[Suspend/hibernate permissions]
+[Local Users]
 Identity=unix-group:power
-Action=org.freedesktop.upower.hibernate;org.freedesktop.upower.suspend
+Action=org.freedesktop.upower.*
 ResultAny=yes
-ResultInactive=yes
+ResultInactive=no
 ResultActive=yes
+

@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<mateconf>
-	<entry name="icon_theme" mtime="1356453758" type="string">
-		<stringvalue>gnome-brave</stringvalue>
-	</entry>
-	<entry name="gtk_theme" mtime="1356453761" type="string">
-		<stringvalue>Shiki-Brave</stringvalue>
-	</entry>
-</mateconf>

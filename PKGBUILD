@@ -1,7 +1,7 @@
 # Maintainer: Daniel Hillenbrand <codeworkx@bbqlinux.org>
 
 pkgname=bbqlinux-config
-pkgver=1.1.5
+pkgver=1.1.6
 pkgrel=1
 pkgdesc="BBQLinux Configuration"
 arch=('any')
@@ -12,10 +12,6 @@ license=('GPL')
 package() {
     cd "$pkgdir"
     mkdir -p etc
-    
-    install -Dm700 "$srcdir/etc/polkit-1/localauthority/50-local.d/org.freedesktop.power.pkla" etc/polkit-1/localauthority/50-local.d/org.freedesktop.power.pkla
-    install -Dm700 "$srcdir/etc/polkit-1/localauthority/50-local.d/org.freedesktop.udisks2.pkla" etc/polkit-1/localauthority/50-local.d/org.freedesktop.udisks2.pkla
-    install -Dm700 "$srcdir/etc/polkit-1/localauthority/50-local.d/org.freedesktop.upower.pkla" etc/polkit-1/localauthority/50-local.d/org.freedesktop.upower.pkla
 
     cp -R "$srcdir/etc/skel" etc/skel
 }

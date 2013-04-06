@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=BBQLinux GSettings
+Comment=BBQLinux default GSettings
+Exec=/usr/bin/bbqlinux-init-gsettings.sh
+Icon=bbqlinux_icon_blue_32x32
+Terminal=false
+Categories=System;

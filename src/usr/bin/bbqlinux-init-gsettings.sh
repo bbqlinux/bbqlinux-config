@@ -2,20 +2,23 @@
 
 if [ ! -f ~/.bbqlinux_gsettings ]
 then
-    # theme
+    # Interface
     gsettings set org.mate.interface gtk-theme 'Shiki-Brave'
     gsettings set org.mate.interface icon-theme 'gnome-brave'
 
-    # wallpaper
+	# Marco
+	gsettings set org.mate.Marco.general theme 'Shiki-Colors-Metacity'
+
+    # Background
     gsettings set org.mate.background picture-filename '/usr/share/backgrounds/bbqlinux/bbqlinux_wallpaper_00.jpg'
 
-    # font rendering
+    # Font rendering
     gsettings set org.mate.font-rendering antialiasing 'rgba'
     gsettings set org.mate.font-rendering dpi 96.0
     gsettings set org.mate.font-rendering hinting 'slight'
     gsettings set org.mate.font-rendering rgba-order 'rgb'
 
-    # mate terminal
+    # Mate terminal
     gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ default-size-columns 100
     gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ default-size-rows 30
     gsettings set org.mate.terminal.profile:/org/mate/terminal/profiles/default/ use-custom-default-size true

@@ -1,7 +1,7 @@
 # Maintainer: Daniel Hillenbrand <codeworkx@bbqlinux.org>
 
 pkgname=bbqlinux-config
-pkgver=1.2.2
+pkgver=1.2.3
 pkgrel=1
 pkgdesc="BBQLinux Configuration"
 arch=('any')
@@ -14,7 +14,7 @@ package() {
     mkdir -p etc
     mkdir -p usr/bin
 
-    install -Dm755 "$srcdir/usr/bin/bbqlinux-init-gsettings.sh" usr/bin/bbqlinux-init-gsettings.sh
+    install -Dm755 "$srcdir/usr/bin/bbqlinux-gsettings.sh" usr/bin/bbqlinux-gsettings.sh
 
     cp -R "$srcdir/etc/skel" etc/skel
 }

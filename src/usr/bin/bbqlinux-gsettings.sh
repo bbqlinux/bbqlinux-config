@@ -9,11 +9,11 @@ if [ ! -f ~/.bbqlinux/.gsettings ] || [ "$1" == "init" ]
 then
     echo "Applying initial settings."
     # Interface
-    gsettings set org.mate.interface gtk-theme 'Shiki-Brave'
-    gsettings set org.mate.interface icon-theme 'gnome-brave'
+    gsettings set org.mate.interface gtk-theme 'MediterraneanNight'
+    gsettings set org.mate.interface icon-theme 'gnome-carbonite'
 
 	# Marco
-    gsettings set org.mate.Marco.general theme 'Shiki-Colors-Metacity'
+    gsettings set org.mate.Marco.general theme 'MediterraneanNight'
 
     # Background
     gsettings set org.mate.background picture-filename '/usr/share/backgrounds/bbqlinux/bbqlinux_wallpaper_00.jpg'
@@ -41,14 +41,21 @@ then
 	echo "Done."
 fi
 
-#CURRENT_VERSION=$(cat ~/.bbqlinux/.gsettings)
-#NEW_VERSION=20130407
-#if [ ${CURRENT_VERSION} -lt ${NEW_VERSION} ] || [ "$1" == "init" ]
-#then
-#    echo "Upgrading from ${CURRENT_VERSION} to ${NEW_VERSION}"
-#    # do something
-#    echo ${NEW_VERSION} > ~/.bbqlinux/.gsettings
-#	 echo "Done."
-#fi
+CURRENT_VERSION=$(cat ~/.bbqlinux/.gsettings)
+NEW_VERSION=20130529
+if [ ${CURRENT_VERSION} -lt ${NEW_VERSION} ] || [ "$1" == "init" ]
+then
+    echo "Upgrading from ${CURRENT_VERSION} to ${NEW_VERSION}"
+
+    # Interface
+    gsettings set org.mate.interface gtk-theme 'MediterraneanNight'
+    gsettings set org.mate.interface icon-theme 'gnome-carbonite'
+
+	# Marco
+    gsettings set org.mate.Marco.general theme 'MediterraneanNight'
+
+    echo ${NEW_VERSION} > ~/.bbqlinux/.gsettings
+	 echo "Done."
+fi
 
 exit 0

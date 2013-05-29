@@ -1,11 +1,11 @@
 # Maintainer: Daniel Hillenbrand <codeworkx@bbqlinux.org>
 
 pkgname=bbqlinux-config
-pkgver=1.2.3
+pkgver=1.2.4
 pkgrel=1
 pkgdesc="BBQLinux Configuration"
 arch=('any')
-depends=('bbqlinux-artwork>=1.0.3')
+depends=('bbqlinux-artwork>=1.0.3' 'gtk-theme-bbqlinux')
 url="https://github.com/bbqlinux/bbqlinux-config"
 license=('GPL')
 

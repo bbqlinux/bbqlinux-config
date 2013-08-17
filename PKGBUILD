@@ -1,13 +1,14 @@
 # Maintainer: Daniel Hillenbrand <codeworkx@bbqlinux.org>
 
 pkgname=bbqlinux-config
-pkgver=1.2.6
+pkgver=1.2.7
 pkgrel=1
 pkgdesc="BBQLinux Configuration"
 arch=('any')
 depends=('bbqlinux-artwork>=1.0.3' 'gtk-theme-bbqlinux')
 url="https://github.com/bbqlinux/bbqlinux-config"
 license=('GPL')
+install=${pkgname}.install
 
 package() {
     cd "$pkgdir"

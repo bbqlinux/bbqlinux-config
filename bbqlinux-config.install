@@ -1,0 +1,8 @@
+post_install() {
+    groupadd android
+    useradd -m -g android -s /sbin/nologin android
+}
+
+post_upgrade() {
+    post_install
+}

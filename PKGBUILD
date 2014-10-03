@@ -1,7 +1,7 @@
 # Maintainer: Daniel Hillenbrand <codeworkx@bbqlinux.org>
 
 pkgname=bbqlinux-config
-pkgver=1.3.0
+pkgver=1.3.2
 pkgrel=1
 pkgdesc="BBQLinux Configuration"
 arch=('any')

@@ -4,7 +4,7 @@ echo "> BBQLinux GSettings"
 
 mkdir -p ~/.bbqlinux
 
-NEW_VERSION=20130406
+NEW_VERSION=20141003
 if [ ! -f ~/.bbqlinux/.gsettings ] || [ "$1" == "init" ]
 then
     echo "Applying initial settings."
@@ -42,7 +42,7 @@ then
 fi
 
 CURRENT_VERSION=$(cat ~/.bbqlinux/.gsettings)
-NEW_VERSION=20130530
+NEW_VERSION=20141003
 if [ ${CURRENT_VERSION} -lt ${NEW_VERSION} ] || [ "$1" == "init" ]
 then
     echo "Upgrading from ${CURRENT_VERSION} to ${NEW_VERSION}"
@@ -55,7 +55,7 @@ then
     gsettings set org.mate.Marco.general theme 'BBQLinux'
 
     echo ${NEW_VERSION} > ~/.bbqlinux/.gsettings
-	 echo "Done."
+	echo "Done."
 fi
 
 exit 0

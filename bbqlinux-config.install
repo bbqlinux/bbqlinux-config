@@ -1,8 +1,24 @@
-post_install() {
-    groupadd android
-    useradd -m -g android -s /sbin/nologin android
-}
-
 post_upgrade() {
-    post_install
+
+    if [ $(vercmp $2 1.4.0-1) -lt 0 ]; then
+
+        echo -n "Replacing pacman.conf with a bbqlinux-specific version ..."
+
+        MACHINE_TYPE=`uname -m`
+
+        mv etc/pacman.conf etc/pacman.conf.bbqsave
+
+        if [ ${MACHINE_TYPE} == 'x86_64' ]; then
+            mv etc/pacman.x86_64.conf.bbqnew etc/pacman.conf
+            rm -f etc/pacman.i686.conf.bbqnew
+        else
+            mv etc/pacman.i686.conf.bbqnew etc/pacman.conf
+            rm -f etc/pacman.x86_64.conf.bbqnew
+        fi
+        
+        echo "done"
+        echo -n "Please verify /etc/pacman.conf !"
+
+    fi
+
 }

@@ -1,7 +1,15 @@
+post_install() {
+
+    rm -f etc/pacman.i686.conf.bbqnew
+    rm -f etc/pacman.x86_64.conf.bbqnew
+
+}
+
 post_upgrade() {
 
     if [ $(vercmp $2 1.4.0-1) -lt 0 ]; then
 
+        echo -n " "
         echo -n "Replacing pacman.conf with a bbqlinux-specific version ..."
 
         MACHINE_TYPE=`uname -m`
@@ -10,15 +18,18 @@ post_upgrade() {
 
         if [ ${MACHINE_TYPE} == 'x86_64' ]; then
             mv etc/pacman.x86_64.conf.bbqnew etc/pacman.conf
-            rm -f etc/pacman.i686.conf.bbqnew
         else
             mv etc/pacman.i686.conf.bbqnew etc/pacman.conf
-            rm -f etc/pacman.x86_64.conf.bbqnew
         fi
         
         echo "done"
-        echo -n "Please verify /etc/pacman.conf !"
+        echo -n "Please verify your new pacman config /etc/pacman.conf"
+        echo -n "The old version of this file got moved to /etc/pacman.conf.bbqsave"
+        echo -n " "
 
     fi
+
+    rm -f etc/pacman.i686.conf.bbqnew
+    rm -f etc/pacman.x86_64.conf.bbqnew
 
 }

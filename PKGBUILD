@@ -1,7 +1,7 @@
 # Maintainer: Daniel Hillenbrand < codeworkx [at] bbqlinux [dot] org>
 
 pkgname=bbqlinux-config
-pkgver=1.5.1
+pkgver=1.6.1
 pkgrel=1
 pkgdesc="BBQLinux Configuration"
 arch=('any')
@@ -20,4 +20,5 @@ package() {
     install -Dm644 "$srcdir/etc/pacman.x86_64.conf.bbqnew" etc/pacman.x86_64.conf.bbqnew
 
     cp -R "$srcdir/etc/skel" etc/skel
+    cp -R "$srcdir/etc/systemd" etc/systemd
 }

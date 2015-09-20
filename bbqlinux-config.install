@@ -3,6 +3,7 @@ post_install() {
     rm -f etc/pacman.i686.conf.bbqnew
     rm -f etc/pacman.x86_64.conf.bbqnew
 
+    systemctl enable reflector.timer
 }
 
 post_upgrade() {
@@ -29,5 +30,12 @@ post_upgrade() {
 
     rm -f etc/pacman.i686.conf.bbqnew
     rm -f etc/pacman.x86_64.conf.bbqnew
+    
+    systemctl enable reflector.timer
+}
+
+pre_remove() {
+
+    systemctl disable reflector.timer
 
 }

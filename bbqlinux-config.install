@@ -1,41 +1,22 @@
 post_install() {
-
     rm -f etc/pacman.i686.conf.bbqnew
     rm -f etc/pacman.x86_64.conf.bbqnew
-
     systemctl enable reflector.timer
 }
 
 post_upgrade() {
-
     if [ $(vercmp $2 1.4.2-1) -lt 0 ]; then
-
         echo -n "Replacing pacman.conf with a bbqlinux-specific version ... "
-
-        MACHINE_TYPE=`uname -m`
-
         mv etc/pacman.conf etc/pacman.conf.bbqsave
-
-        if [ ${MACHINE_TYPE} == 'x86_64' ]; then
-            mv etc/pacman.x86_64.conf.bbqnew etc/pacman.conf
-        else
-            mv etc/pacman.i686.conf.bbqnew etc/pacman.conf
-        fi
-        
+        mv etc/pacman.x86_64.conf.bbqnew etc/pacman.conf
         echo "done"
         echo "Please verify your new pacman config at /etc/pacman.conf"
         echo "The old version of this file got moved to /etc/pacman.conf.bbqsave"
-
     fi
-
-    rm -f etc/pacman.i686.conf.bbqnew
     rm -f etc/pacman.x86_64.conf.bbqnew
-    
     systemctl enable reflector.timer
 }
 
 pre_remove() {
-
     systemctl disable reflector.timer
-
 }
